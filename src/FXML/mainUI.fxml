@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="741.0" prefWidth="849.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MainUIController">
+   <top>
+       <VBox alignment="CENTER" prefHeight="71.0" prefWidth="777.0" BorderPane.alignment="CENTER">
+           <BorderPane.margin>
+               <Insets/>
+           </BorderPane.margin>
+           <Label text="model speed tick/s"/>
+           <Slider fx:id="sliderTicks" blockIncrement="1.0" majorTickUnit="10.0" maxWidth="440.0" minorTickCount="5"
+                   prefHeight="27.0" prefWidth="440.0" showTickLabels="true" showTickMarks="true" snapToTicks="true"
+                   value="1.0"/>
+           <HBox alignment="CENTER" prefHeight="27.0" prefWidth="600.0" spacing="5.0">
+               <Label text="ticks:"/>
+               <Label fx:id="tickCount" text="0"/>
+           </HBox>
+       </VBox>
+   </top>
+   <left>
+       <VBox alignment="TOP_CENTER" spacing="5.0" BorderPane.alignment="CENTER">
+           <BorderPane.margin>
+               <Insets left="10.0"/>
+           </BorderPane.margin>
+           <HBox maxWidth="-Infinity" prefHeight="34.0" prefWidth="172.0" style="-fx-background-color: #8FE585;">
+               <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="34.0"
+                     prefWidth="180.0">
+                   <Slider fx:id="sliderHumanCount" blockIncrement="1.0" majorTickUnit="1.0" max="50.0"
+                           min="10.0" minorTickCount="0" snapToTicks="true" value="10.0"/>
+                   <HBox prefHeight="20.0" prefWidth="168.0" style="-fx-background-color: #8FE585;">
+                       <Label text="number-of-people"/>
+                       <TextField fx:id="fieldHumanCount" editable="false" minHeight="18.0" minWidth="30.0"
+                                  mouseTransparent="true" prefHeight="15.0" prefWidth="30.0">
+                           <HBox.margin>
+                               <Insets left="75.0"/>
+                           </HBox.margin>
+                       </TextField>
+                   </HBox>
+               </VBox>
+           </HBox>
+           <HBox layoutX="10.0" layoutY="10.0" maxWidth="-Infinity" prefHeight="34.0" prefWidth="172.0"
+                 style="-fx-background-color: #8FE585;">
+               <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="51.0"
+                     prefWidth="172.0">
+                   <Slider fx:id="sliderInfectivity" blockIncrement="1.0" majorTickUnit="1.0" minorTickCount="0"
+                           snapToTicks="true"/>
+                   <HBox prefHeight="20.0" prefWidth="172.0">
+                       <Label text="infectivity"/>
+                       <TextField fx:id="fieldInfectivity" editable="false" minHeight="18.0" minWidth="30.0"
+                                  mouseTransparent="true" prefHeight="15.0" prefWidth="30.0">
+                           <HBox.margin>
+                               <Insets left="75.0"/>
+                           </HBox.margin>
+                       </TextField>
+                       <Label text="\%"/>
+                   </HBox>
+               </VBox>
+           </HBox>
+           <HBox layoutX="10.0" layoutY="49.0" maxWidth="-Infinity" prefHeight="34.0" prefWidth="172.0"
+                 style="-fx-background-color: #8FE585;">
+               <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="51.0"
+                     prefWidth="172.0">
+                   <Slider fx:id="sliderChanceOfRecovery" blockIncrement="1.0" majorTickUnit="1.0"
+                           minorTickCount="0" snapToTicks="true"/>
+                   <HBox prefHeight="20.0" prefWidth="172.0">
+                       <Label minWidth="-Infinity" prefHeight="17.0" prefWidth="105.0"
+                              text="recovery-chance"/>
+                       <TextField fx:id="fieldRecoveryChance" editable="false" minHeight="18.0"
+                                  minWidth="30.0" mouseTransparent="true" prefHeight="15.0"
+                                  prefWidth="30.0">
+                           <HBox.margin>
+                               <Insets left="20.0"/>
+                           </HBox.margin>
+                       </TextField>
+                       <Label text="\%"/>
+                   </HBox>
+               </VBox>
+           </HBox>
+           <HBox layoutX="10.0" layoutY="49.0" maxWidth="-Infinity" prefHeight="34.0" prefWidth="172.0"
+                 style="-fx-background-color: #8FE585;">
+               <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="51.0"
+                     prefWidth="172.0">
+                   <Slider fx:id="sliderDuration" blockIncrement="1.0" majorTickUnit="1.0" min="1.0"
+                           minorTickCount="0" snapToTicks="true" value="1.0"/>
+                   <HBox prefHeight="20.0" prefWidth="172.0">
+                       <Label prefHeight="17.0" prefWidth="90.0" text="sickness-duration"/>
+                       <TextField fx:id="fieldSicknessDurationDays" editable="false" minHeight="18.0"
+                                  minWidth="30.0" mouseTransparent="true" prefHeight="15.0"
+                                  prefWidth="30.0">
+                           <HBox.margin>
+                               <Insets left="30.0"/>
+                           </HBox.margin>
+                       </TextField>
+                       <Label text="days"/>
+                   </HBox>
+               </VBox>
+           </HBox>
+           <HBox layoutX="13.0" layoutY="88.0" maxWidth="-Infinity" prefHeight="34.0" prefWidth="172.0"
+                 style="-fx-background-color: #8FE585;">
+               <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="51.0"
+                     prefWidth="172.0">
+                   <Slider fx:id="sliderReproductionChance" blockIncrement="1.0" majorTickUnit="1.0"
+                           minorTickCount="0" value="20.0"/>
+                   <HBox prefHeight="20.0" prefWidth="172.0">
+                       <Label minWidth="-Infinity" prefHeight="17.0" prefWidth="105.0"
+                              text="reproduction-chance"/>
+                       <TextField fx:id="fieldReproductionChance" editable="false" minHeight="18.0"
+                                  minWidth="30.0" mouseTransparent="true" prefHeight="15.0"
+                                  prefWidth="30.0">
+                           <HBox.margin>
+                               <Insets left="20.0"/>
+                           </HBox.margin>
+                       </TextField>
+                       <Label text="\%"/>
+                   </HBox>
+               </VBox>
+           </HBox>
+           <VBox maxHeight="35.0" maxWidth="172.0" prefHeight="35.0" prefWidth="172.0"
+                 style="-fx-background-color: #8FE585;">
+               <Slider fx:id="sliderHumanLifeLength" majorTickUnit="10.0" max="500.0" min="200.0" minorTickCount="0"
+                       snapToTicks="true" value="200.0"/>
+               <HBox prefHeight="26.0" prefWidth="172.0">
+                   <Label prefHeight="17.0" prefWidth="110.0" text="human-life-length"/>
+                   <TextField fx:id="fieldHumanLifeLength" editable="false" minHeight="18.0" minWidth="30.0"
+                              mouseTransparent="true" prefHeight="18.0" prefWidth="40.0">
+                       <HBox.margin>
+                           <Insets/>
+                       </HBox.margin>
+                   </TextField>
+                   <Label text="days"/>
+               </HBox>
+           </VBox>
+           <HBox alignment="CENTER" prefHeight="36.0" prefWidth="178.0" spacing="5.0">
+               <Button mnemonicParsing="false" onAction="#setupSimulation" style="-fx-background-color: #BACFF3;"
+                       text="setup"/>
+               <Button mnemonicParsing="false" onAction="#startSimulation" style="-fx-background-color: #BACFF3;"
+                       text="go"/>
+           </HBox>
+           <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="55.0" prefWidth="79.0"
+                 style="-fx-background-color: #FFFF9A; -fx-border-color: #E7E741; -fx-background-radius: 5; -fx-border-radius: 5;">
+               <opaqueInsets>
+                   <Insets/>
+               </opaqueInsets>
+               <Label text="Days "/>
+               <TextField fx:id="fieldDays" editable="false" maxWidth="-Infinity" prefHeight="27.0" prefWidth="48.0"
+                          style="-fx-background-color: white; -fx-border-color: white;"/>
+           </VBox>
+           <Button mnemonicParsing="false" onAction="#pauseSimulation" style="-fx-background-color: #BACFF3;"
+                   text="Stop"/>
+       </VBox>
+   </left>
+   <center>
+      <Pane fx:id="paneSimulation" minHeight="271.0" minWidth="400.0" prefHeight="271.0" prefWidth="589.0" style="-fx-background-color: black; -fx-border-color: grey;" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin></Pane>
+   </center>
+   <bottom>
+      <LineChart fx:id="populationChart" maxHeight="-Infinity" prefHeight="272.0" prefWidth="849.0" title="Population" BorderPane.alignment="CENTER">
+        <xAxis>
+          <NumberAxis animated="false" label="days" minorTickCount="2" prefHeight="33.0" prefWidth="767.0" tickLabelGap="0.0" tickLength="9.0" tickUnit="0.0" upperBound="1000.0" fx:id="xAxisDays" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis animated="false" label="number of humans" minorTickCount="2" prefHeight="112.0" prefWidth="52.0" side="LEFT" tickLabelGap="0.0" tickLength="9.0" tickUnit="0.0" upperBound="80.0" />
+        </yAxis>
+      </LineChart>
+   </bottom>
+</BorderPane>
